@@ -11,6 +11,7 @@ const Header = () => {
     { name: "Home", href: "/" },
     {
       name: "Services",
+
       dropdown: true,
       items: [
         { name: "FSSAI Food License", href: "#fssai" },
@@ -91,7 +92,7 @@ const Header = () => {
             whileTap={{ scale: 0.95 }}
           >
             <a
-              href="#get-started"
+              href="#video"
               className="bg-indigo-600 text-white text-sm font-medium px-5 py-2 rounded-full shadow hover:bg-indigo-700 transition"
             >
               Get Started
@@ -101,7 +102,7 @@ const Header = () => {
           {/* Mobile: CTA + Menu Icon */}
           <div className="md:hidden flex items-center space-x-3">
             <motion.a
-              href="#get-started"
+              href="#video"
               className="bg-indigo-600 text-white text-sm font-medium px-4 py-1.5 rounded-full shadow hover:bg-indigo-700 transition"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}

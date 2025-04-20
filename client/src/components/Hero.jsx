@@ -110,12 +110,12 @@ const Hero = () => {
             variants={fadeIn(1)}
             className="flex flex-row justify-center items-center gap-4 mt-10"
           >
-            <Link to={'#video'} className="flex items-center justify-center gap-2 bg-indigo-600 text-white px-6 py-3 rounded-md font-semibold shadow hover:bg-indigo-700 transition w-full sm:w-auto">
+            <Link to={'#video'} className="flex flex-nowrap items-center justify-center gap-2 bg-indigo-600 text-white px-2 py-3 rounded-md font-semibold shadow hover:bg-indigo-700 transition w-full sm:w-auto">
               <ArrowRightCircle className="w-5 h-5" />
               Get Started
             </Link>
 
-            <button className="flex items-center justify-center gap-2 bg-white border-2 border-indigo-600 text-indigo-600 px-6 py-3 rounded-md font-semibold shadow hover:bg-indigo-700 hover:text-white transition w-full sm:w-auto">
+            <button className="flex items-center justify-center gap-2 bg-white border-2 border-indigo-600 text-indigo-600 px-2 py-2.5 rounded-md font-semibold shadow hover:bg-indigo-700 hover:text-white transition w-full sm:w-auto">
               <Info className="w-5 h-5" />
               Our Services
             </button>

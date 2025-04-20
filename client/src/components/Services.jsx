@@ -12,7 +12,7 @@ const services = [
     title: "Account Handling",
     description:
       "Efficient bookkeeping and account management tailored for F&B businesses.",
-    icon: <Briefcase className="h-8 w-8 text-purple-500" />,
+    icon: <Briefcase className="h-8 w-8 text-indigo-500" />,
   },
   {
     title: "Swiggy & Zomato Setup",
@@ -36,9 +36,9 @@ const services = [
 
 export default function ServicesSection() {
   return (
-    <section className="relative bg-gradient-to-b from-[#E9EFFD] to-white pt-[140px] pb-24 px-6 sm:px-10 lg:px-20 overflow-hidden">
+    <section className="relative bg-gradient-to-b from-[#E9EFFD] to-white pt-[60px] lg:pt-[140px] pb-24 px-6 sm:px-10 lg:px-20 overflow-hidden">
       {/* Soft Blobs for depth */}
-      <div className="absolute top-[-100px] left-[-120px] w-[400px] h-[400px] bg-purple-300 opacity-20 blur-[100px] rounded-full z-0" />
+      <div className="absolute top-[-100px] left-[-120px] w-[400px] h-[400px] bg-indigo-300 opacity-20 blur-[100px] rounded-full z-0" />
       <div className="absolute bottom-[-100px] right-[-120px] w-[400px] h-[400px] bg-blue-300 opacity-20 blur-[100px] rounded-full z-0" />
 
       <div className="relative z-10 max-w-7xl mx-auto text-center">
@@ -72,7 +72,7 @@ export default function ServicesSection() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: index * 0.15 }}
               viewport={{ once: true }}
-              className="bg-white rounded-2xl p-6 shadow-xl hover:shadow-2xl transition-all duration-300 border border-purple-100 hover:-translate-y-2"
+              className="bg-white rounded-2xl p-6 shadow-xl hover:shadow-2xl transition-all duration-300 border border-indigo-100 hover:-translate-y-2"
             >
               <div className="mb-4 flex justify-center">{service.icon}</div>
               <h3 className="text-xl font-semibold text-gray-800 mb-2">
@@ -90,7 +90,7 @@ export default function ServicesSection() {
           transition={{ duration: 0.4, delay: 0.3 }}
           viewport={{ once: true }}
         >
-          <button className="px-6 py-3 bg-purple-600 text-white text-sm font-medium rounded-xl shadow-md hover:bg-purple-700 transition-all duration-300">
+          <button className="px-6 py-3 bg-indigo-600 text-white text-sm font-medium rounded-xl shadow-md hover:bg-indigo-700 transition-all duration-300">
             Learn More About Our Process →
           </button>
         </motion.div>
