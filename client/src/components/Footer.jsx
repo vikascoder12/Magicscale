@@ -4,27 +4,27 @@ const Footer = () => {
   return (
     <footer className="bg-black text-white text-center p-6 text-sm">
       <div className="space-x-2">
-        <Link to="/contact-us" className="hover:text-primary">
+        <Link to="#contact" className="hover:text-primary">
           Contact Us
-        </Link>{" "}
+        </Link>
         |
-        <Link to="/terms-of-service" className="hover:text-primary">
-          {" "}
+        <Link to="/terms-and-condition" className="hover:text-primary">
+          
           Terms of Service
-        </Link>{" "}
+        </Link>
         |
         <Link to="/privacy-policy" className="hover:text-primary">
-          {" "}
+          
           Privacy Policy
-        </Link>{" "}
+        </Link>
         |
-        <Link to="/shipping-and-delivery" className="hover:text-primary">
-          {" "}
+        <Link to="/shipping-policy" className="hover:text-primary">
+          
           Shipping & Delivery
-        </Link>{" "}
+        </Link>
         |
-        <Link to="/cancellation-and-refund" className="hover:text-primary">
-          {" "}
+        <Link to="/return-policy" className="hover:text-primary">
+          
           Cancellation & Refund
         </Link>
       </div>
