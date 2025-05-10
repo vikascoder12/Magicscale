@@ -134,12 +134,12 @@ const Hero = () => {
         </motion.div>
       </div>
 
-      <div className="md:flex justify-center px-[40px] md:px-[80px] items-center">
+      {/* <div className="md:flex justify-center px-[40px] md:px-[80px] items-center">
         <p className="font-semibold pt-10 px-5">
           More Than 100+ Restaurants Partner Features
         </p>
         <Review />
-      </div>
+      </div> */}
     </div>
   );
 };
