@@ -7,6 +7,7 @@ import Contact from "../components/Contact";
 import About from "../components/About";
 import Footer from "../components/Footer";
 import Video from "../components/Video";
+import Pricing from "../components/Pricing";
 
 const Home = () => {
   return (
@@ -14,7 +15,8 @@ const Home = () => {
       <Header />
       <Hero />
       <Video />
-      <Services />
+      <Pricing />
+      {/* <Services /> */}
       {/* <Testimonial /> */}
       <Contact />
       <About />

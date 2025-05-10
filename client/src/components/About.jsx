@@ -47,9 +47,13 @@ export default function AboutPage() {
               onboarding to legal registrations — so you can focus on cooking
               while we handle the chaos.
             </p>
-            <button className="bg-indigo-600 hover:bg-indigo-700 text-white px-6 py-3 rounded-xl text-sm sm:text-base font-medium transition duration-300 shadow-lg hover:shadow-xl">
+            <a
+              href="https://wa.me/919311330885"
+              target="_blank"
+              className="bg-indigo-600 hover:bg-indigo-700 text-white px-6 py-3 rounded-xl text-sm sm:text-base font-medium transition duration-300 shadow-lg hover:shadow-xl"
+            >
               Let’s Get You Started
-            </button>
+            </a>
           </motion.div>
 
           <motion.div

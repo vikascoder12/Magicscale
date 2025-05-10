@@ -11,17 +11,10 @@ const Header = () => {
     { name: "Home", href: "/" },
     {
       name: "Services",
-
-      dropdown: true,
-      items: [
-        { name: "FSSAI Food License", href: "#fssai" },
-        { name: "GST Registration", href: "#gst" },
-        { name: "Swiggy/Zomato Setup", href: "#zomato" },
-        { name: "Accounting & Onboarding", href: "#accounting" },
-      ],
+      href: "#services",
     },
     { name: "About", href: "#about" },
-    { name: "Testimonials", href: "#testimonials" },
+    // { name: "Testimonials", href: "#testimonials" },
     { name: "Contact", href: "#contact" },
   ];
 

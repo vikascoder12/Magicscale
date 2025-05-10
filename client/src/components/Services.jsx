@@ -13,24 +13,28 @@ const services = [
     description:
       "Efficient bookkeeping and account management tailored for F&B businesses.",
     icon: <Briefcase className="h-8 w-8 text-indigo-500" />,
+    price: "₹1,999/month",
   },
   {
     title: "Swiggy & Zomato Setup",
     description:
       "Get listed on top food delivery platforms with complete setup and support.",
     icon: <UtensilsCrossed className="h-8 w-8 text-orange-500" />,
+    price: "₹4,999 one-time",
   },
   {
     title: "GST Registration & Filing",
     description:
       "Complete assistance with GST registration and timely filing of returns.",
     icon: <FileText className="h-8 w-8 text-emerald-500" />,
+    price: "From ₹2,499",
   },
   {
     title: "FSSAI Registration",
     description:
       "Ensure food safety compliance with fast and reliable FSSAI registration.",
     icon: <ShieldCheck className="h-8 w-8 text-blue-500" />,
+    price: "₹1,299 one-time",
   },
 ];
 
@@ -49,7 +53,7 @@ export default function ServicesSection() {
           viewport={{ once: true }}
           className="text-4xl sm:text-5xl font-extrabold text-gray-900 mb-4"
         >
-          <Title preTitle={"Services"} title={"We Offer"}/>
+          <Title preTitle={"Services"} title={"We Offer"} />
         </motion.h2>
 
         <motion.p
@@ -72,13 +76,18 @@ export default function ServicesSection() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: index * 0.15 }}
               viewport={{ once: true }}
-              className="bg-white rounded-2xl p-6 shadow-xl hover:shadow-2xl transition-all duration-300 border border-indigo-100 hover:-translate-y-2"
+              className="bg-white rounded-2xl p-6 shadow-xl hover:shadow-2xl transition-all duration-300 border border-indigo-100 hover:-translate-y-2 flex flex-col justify-between"
             >
               <div className="mb-4 flex justify-center">{service.icon}</div>
               <h3 className="text-xl font-semibold text-gray-800 mb-2">
                 {service.title}
               </h3>
-              <p className="text-sm text-gray-600">{service.description}</p>
+              <p className="text-sm text-gray-600 mb-4">
+                {service.description}
+              </p>
+              <div className="mt-auto text-indigo-600 font-bold text-lg">
+                {service.price}
+              </div>
             </motion.div>
           ))}
         </div>
