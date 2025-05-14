@@ -3,7 +3,10 @@ import { Mail, Phone, MapPin } from "lucide-react";
 
 export default function Contact() {
   return (
-    <section id="contact" className="relative bg-gradient-to-b from-[#E9EFFD] to-white pt-[140px] pb-24 px-6 sm:px-10 lg:px-20 overflow-hidden">
+    <section
+      id="contact"
+      className="relative bg-gradient-to-b from-[#E9EFFD] to-white pt-[140px] pb-24 px-6 sm:px-10 lg:px-20 overflow-hidden"
+    >
       {/* Decorative background blobs */}
       <div className="absolute top-[-100px] left-[-100px] w-[500px] h-[500px] bg-indigo-300 opacity-20 blur-[120px] rounded-full z-0"></div>
       <div className="absolute bottom-[-100px] right-[-100px] w-[500px] h-[500px] bg-indigo-300 opacity-20 blur-[120px] rounded-full z-0"></div>
@@ -26,6 +29,9 @@ export default function Contact() {
           </p>
 
           <div className="space-y-6">
+            <div className="flex items-center gap-4">
+              <span className="text-gray-800">Vishal Kushwaha</span>
+            </div>
             <div className="flex items-center gap-4">
               <Phone className="text-indigo-600" />
               <span className="text-gray-800">+91 9311330885</span>
