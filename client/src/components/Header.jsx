@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Menu, X, ChevronDown } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
-import { logo } from "../assets"; // Replace with your actual logo import
+import { logo } from "../assets"; 
 
 const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false);

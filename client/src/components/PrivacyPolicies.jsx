@@ -4,7 +4,7 @@ const privacyPolicy = [
   {
     title: "Introduction",
     content: `
-      Welcome to <b>MagicScale!</b> Your privacy is important to us. This Privacy Policy outlines how we collect, use, and protect your information when you access our website or use our services.
+      Welcome to <b>Magic Scale Resturant Consultant!</b> Your privacy is important to us. This Privacy Policy outlines how we collect, use, and protect your information when you access our website or use our services.
     `,
   },
   {

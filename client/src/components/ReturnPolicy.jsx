@@ -5,7 +5,7 @@ const returnPolicy = [
     title: "Eligibility for Refunds",
     content: `
       Refunds are only applicable under the following conditions:
-      1. If <b>MagicScale</b> is unable to deliver the agreed service due to internal issues or unforeseen circumstances.
+      1. If <b>Magic Scale Resturant Consultant</b> is unable to deliver the agreed service due to internal issues or unforeseen circumstances.
       2. If the service request is canceled <b>before</b> the initiation of the process.
     `,
   },

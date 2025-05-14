@@ -9,27 +9,23 @@ const Footer = () => {
         </Link>
         |
         <Link to="/terms-and-condition" className="hover:text-primary">
-          
           Terms of Service
         </Link>
         |
         <Link to="/privacy-policy" className="hover:text-primary">
-          
           Privacy Policy
         </Link>
         |
         <Link to="/shipping-policy" className="hover:text-primary">
-          
           Shipping & Delivery
         </Link>
         |
         <Link to="/return-policy" className="hover:text-primary">
-          
           Cancellation & Refund
         </Link>
       </div>
       <p className="text-gray-400 mt-3">
-        © 2024 Magicscale Technologies Private Limited. All rights reserved.
+        © 2024 Magic Scale Resturant Consultant. All rights reserved.
       </p>
     </footer>
   );
