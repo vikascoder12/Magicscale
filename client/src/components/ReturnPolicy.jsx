@@ -38,6 +38,7 @@ const returnPolicy = [
     title: "Contact Us",
     content: `
       For any questions or concerns about our Return and Refund Policy, reach out to us: <br />
+      Vishal Kushwaha
        1. <b>Email</b> : support@magicscale.in </br>
        2. <b>Phone</b> : +91 8826073117 </br>
        3. <b>Address</b> : H.No 72, Navyug Public School, Rajokari, New Delhi - 110038

@@ -52,7 +52,9 @@ const privacyPolicy = [
   {
     title: "Contact Us",
     content: `
+      
       If you have any questions or concerns about this Privacy Policy, please contact us at:<br>
+      Vishal kushwaha
       <b>Email:</b> support@magicscale.in<br>
       <b>Phone:</b> +91 8826073117<br>
       <b>Address:</b> H.No 72, Navyug Public School, Rajokari, New Delhi - 110038

@@ -82,7 +82,7 @@ const Terms = () => {
   return (
     <div className="w-full">
       <div className="bg-indigo-500 text-white p-0.5 sm:text-[17px] md:text-[1.8rem] text-center w-full">
-        <p className="font-bold">TERMS OF SERVICE</p>
+        <p className="font-bold">TERMS OF SERVICE - Vishal Kushwaha</p>
       </div>
 
       <div className="w-full p-[20px] md:px-[120px] md:py-[50px]">

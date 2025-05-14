@@ -25,10 +25,11 @@ const Footer = () => {
         </Link>
       </div>
       <p className="text-gray-400 mt-3">
-        © 2024 Magic Scale Resturant Consultant. All rights reserved.
+        © 2024 Magic Scale Resturant Consultant (Vishal Kushwaha) . All rights reserved.
       </p>
     </footer>
   );
 };
+
 
 export default Footer;
