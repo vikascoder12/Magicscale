@@ -13,6 +13,7 @@ import authRoutes from './routes/authRoutes.js';
 
 
 import cashfreeRoutes from "./routes/cashfreeRoutes.js"; // ✅ correct
+import  adminAuthConfig from "./routes/adminAuthConfig.js";
 
 
 
@@ -37,6 +38,8 @@ app.use(express.json());
 
 // Routes
 app.use("/api/plan", planRoutes);
+app.use('/api/admin', adminAuthConfig);
+
 
 app.use('/api/auth', authRoutes);
 // app.use('/api/admin', adminRoutes);

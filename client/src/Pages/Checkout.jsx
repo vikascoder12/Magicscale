@@ -2,19 +2,15 @@
 
 
 
-// //corect code 
-
-
-
 // import React, { useState, useEffect } from "react";
-// import { useParams } from "react-router-dom";
+// import { useParams, useLocation } from "react-router-dom";
 // import { FaCheckCircle } from "react-icons/fa";
 // import { motion } from "framer-motion";
 
 // const API_BASE = "https://magicscale-backend.onrender.com";
 
 // const planData = {
-//   "plan-basic": {
+//   basic: {
 //     name: "Basic Growth Plan",
 //     price: 7999,
 //     features: [
@@ -26,7 +22,7 @@
 //     ],
 //     badge: "Recommended for Startups",
 //   },
-//   "plan-premium": {
+//   premium: {
 //     name: "Premium Growth Plan",
 //     price: 9999,
 //     features: [
@@ -38,32 +34,43 @@
 //     ],
 //     badge: "Best for Growing Brands",
 //   },
+//   zomato: {
+//     name: "Zomato Onboarding Plan",
+//     price: 1999,
+//     features: [
+//       "Zomato Listing & Verification",
+//       "Menu Upload (with images)",
+//       "FSSAI/GST Assistance",
+//       "Restaurant Branding (Logo, Menu, QR)",
+//       "Payment & Delivery Setup",
+//       "WhatsApp Support",
+//     ],
+//     badge: "Perfect for Cloud Kitchens",
+//   },
 // };
 
-//  const discountMap = { 1: 0, 3: 5, 6: 10, 12: 20 };
-// // const getDiscount = (planId, duration) => {
-// //   if (!["plan-basic", "plan-premium"].includes(planId)) return 0;
-// //   switch (duration) {
-// //     case 1: return 10;
-// //     case 3: return 25;
-// //     case 6: return 30;
-// //     case 12: return 40;
-// //     default: return 0;
-// //   }
-// // };
+// const discountMap = { 1: 10, 3: 25, 6: 30, 12: 40 };
 
 // const Checkout = () => {
 //   const { id } = useParams();
-//   const [duration, setDuration] = useState(12);
+//   const location = useLocation();
+//   const queryParams = new URLSearchParams(location.search);
+//   const queryMonths = parseInt(queryParams.get("months"), 10);
+
+//   const [duration, setDuration] = useState(queryMonths || 12);
 //   const [formData, setFormData] = useState({ name: "", email: "", phone: "", address: "" });
 //   const [sdkLoaded, setSdkLoaded] = useState(false);
 //   const [cashfree, setCashfree] = useState(null);
 //   const [loading, setLoading] = useState(false);
 
-//   const plan = planData[id];
+//   const planKey = id?.startsWith("plan-") ? id.replace("plan-", "") : null;
+//   const plan = planData[planKey];
+
+//   if (!plan) return <div className="text-center text-red-500 py-10">Invalid plan selected</div>;
+
 //   const discount = discountMap[duration] || 0;
-//   const monthlyPrice = plan ? plan.price - (plan.price * discount) / 100 : 0;
-//   const totalPrice = monthlyPrice * duration;
+//   const discountedMonthlyPrice = plan.price * (1 - discount / 100);
+//   const totalPrice = Math.round(discountedMonthlyPrice * duration);
 
 //   useEffect(() => {
 //     const script = document.createElement("script");
@@ -95,7 +102,7 @@
 //       const res = await fetch(`${API_BASE}/api/cashfree/initiate-payment`, {
 //         method: "POST",
 //         headers: { "Content-Type": "application/json" },
-//         body: JSON.stringify({ ...formData, planId: id, amount: totalPrice, duration }),
+//         body: JSON.stringify({ ...formData, planId: planKey, amount: totalPrice, duration }),
 //       });
 //       const data = await res.json();
 //       if (!res.ok || !data.payment_session_id) throw new Error("Failed to initiate payment.");
@@ -110,7 +117,6 @@
 //     }
 //   };
 
-//   if (!plan) return <div className="text-center text-red-500 py-10">Invalid plan selected</div>;
 //   const isFormFilled = formData.name && formData.email && formData.phone;
 
 //   return (
@@ -197,7 +203,7 @@
 //             )}
 //             <div className="flex justify-between font-semibold border-t pt-3">
 //               <span>Monthly Price</span>
-//               <span>₹{monthlyPrice.toLocaleString()}</span>
+//               <span>₹{Math.round(discountedMonthlyPrice).toLocaleString()}</span>
 //             </div>
 //             <div className="flex justify-between text-lg font-bold border-t pt-4">
 //               <span>Total</span>
@@ -262,55 +268,51 @@
 
 
 
+
 import React, { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, useLocation } from "react-router-dom";
 import { FaCheckCircle } from "react-icons/fa";
 import { motion } from "framer-motion";
 
-const API_BASE = "https://magicscale-backend.onrender.com";
+// const API_BASE = "https://magicscale-backend.onrender.com";
+const API_BASE = "http://localhost:5000"; // or your actual backend port
 
-const planData = {
-  basic: {
-    name: "Basic Growth Plan",
-    price: 7999,
-    features: [
-      "Menu Score Update",
-      "Customer Review Management",
-      "Weekly Consultant Calls",
-      "Menu Optimization",
-      "Basic Promotion Strategy",
-    ],
-    badge: "Recommended for Startups",
-  },
-  premium: {
-    name: "Premium Growth Plan",
-    price: 9999,
-    features: [
-      "All Basic Features",
-      "Dedicated Account Manager",
-      "Festival-Specific Promotions",
-      "Zomato & Swiggy Ad Campaigns",
-      "Advanced Analytics Dashboard",
-    ],
-    badge: "Best for Growing Brands",
-  },
-};
 
 const discountMap = { 1: 10, 3: 25, 6: 30, 12: 40 };
 
 const Checkout = () => {
   const { id } = useParams();
-  const [duration, setDuration] = useState(12);
+  const location = useLocation();
+  const queryParams = new URLSearchParams(location.search);
+  const queryMonths = parseInt(queryParams.get("months"), 10);
+
+  const [plan, setPlan] = useState(null);
+  const [error, setError] = useState(null);
+  const [duration, setDuration] = useState(queryMonths || 12);
   const [formData, setFormData] = useState({ name: "", email: "", phone: "", address: "" });
   const [sdkLoaded, setSdkLoaded] = useState(false);
   const [cashfree, setCashfree] = useState(null);
   const [loading, setLoading] = useState(false);
 
-  const planKey = id?.replace("plan-", "");
-  const plan = planData[planKey];
-  const discount = discountMap[duration] || 0;
-  const discountedMonthlyPrice = plan ? plan.price * (1 - discount / 100) : 0;
-  const totalPrice = Math.round(discountedMonthlyPrice * duration);
+  useEffect(() => {
+    const fetchPlan = async () => {
+      try {
+        const planId = id;
+        if (!planId) {
+          setError("Invalid plan ID");
+          return;
+        }
+        const res = await fetch(`${API_BASE}/api/plan/${planId}`);
+        if (!res.ok) throw new Error("Failed to fetch plan");
+        const data = await res.json();
+        setPlan(data);
+      } catch (err) {
+        setError("Could not load plan data");
+      }
+    };
+
+    fetchPlan();
+  }, [id]);
 
   useEffect(() => {
     const script = document.createElement("script");
@@ -337,12 +339,16 @@ const Checkout = () => {
       return;
     }
 
+    const discount = discountMap[duration] || 0;
+    const discountedMonthlyPrice = plan.price * (1 - discount / 100);
+    const totalPrice = Math.round(discountedMonthlyPrice * duration);
+
     setLoading(true);
     try {
       const res = await fetch(`${API_BASE}/api/cashfree/initiate-payment`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ ...formData, planId: planKey, amount: totalPrice, duration }),
+        body: JSON.stringify({ ...formData, planId: id.replace("plan-", ""), amount: totalPrice, duration }),
       });
       const data = await res.json();
       if (!res.ok || !data.payment_session_id) throw new Error("Failed to initiate payment.");
@@ -357,7 +363,12 @@ const Checkout = () => {
     }
   };
 
-  if (!plan) return <div className="text-center text-red-500 py-10">Invalid plan selected</div>;
+  if (error) return <div className="text-center text-red-500 py-10">{error}</div>;
+  if (!plan) return <div className="text-center py-10 text-gray-500">Loading plan...</div>;
+
+  const discount = discountMap[duration] || 0;
+  const discountedMonthlyPrice = plan.price * (1 - discount / 100);
+  const totalPrice = Math.round(discountedMonthlyPrice * duration);
   const isFormFilled = formData.name && formData.email && formData.phone;
 
   return (
@@ -493,9 +504,3 @@ const Checkout = () => {
 };
 
 export default Checkout;
-
-
-
-
-
-
