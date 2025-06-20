@@ -105,7 +105,7 @@ export const sendOTP = async (email, otp) => {
 
 // ✅ Send Password Reset Email
 export const sendResetEmail = async (email, token) => {
-  const resetLink = `http://localhost:5173/reset-password/${token}`;
+  const resetLink = `https://magicscale.in/reset-password/${token}`;
   const mailOptions = {
     from: process.env.EMAIL_USER,
     to: email,
@@ -143,7 +143,7 @@ export const sendPaymentEmails = async ({ name, email, plan, duration, amount, o
 
   const adminMessage = {
     from: process.env.EMAIL_USER,
-    to: 'admin@magicscale.in', // ✅ Change this to your actual admin email
+    to: 'vikasvikas9095@gmail.com', // ✅ Change this to your actual admin email
     subject: `📢 New Purchase: ${name} | ${plan}`,
     html: `
       <h2>New Order Details</h2>

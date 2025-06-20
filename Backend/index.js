@@ -7,7 +7,9 @@ import bcrypt from 'bcrypt';
 // import crypto from 'crypto';
 import dotenv from "dotenv";
 // import { Cashfree } from 'cashfree-pg';
-import planRoutes from "./routes/Plan.js";
+import planRoutes from './routes/Plan.js';
+
+ 
 
 import authRoutes from './routes/authRoutes.js';
 
@@ -43,7 +45,9 @@ app.use('/api/admin', adminAuthConfig);
 
 app.use('/api/auth', authRoutes);
 // app.use('/api/admin', adminRoutes);
+
 app.use('/api/cashfree', cashfreeRoutes);
+
 
 // MongoDB connection and server startup
 const PORT = process.env.PORT || 5000;
