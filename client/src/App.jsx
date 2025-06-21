@@ -19,6 +19,11 @@ import Signup from './components/Signup/Signup';
 import ProtectedRoute from './components/ProtectedRoute'; 
 import PhoneOTPLogin from './components/PhoneOTPLogin';
 import ZomatoCoursePage from    './Pages/depthcard/CoursePage/ZomatoCoursePage'; 
+import UserDashboard from './Pages/UserDashboard/UserDashboard';
+import SellerDashboard from './Pages/SellerDashboard/SellerDashboard';
+import Profile from './Pages/UserDashboard/Profile'; 
+import SwiggyOnboardingCourse from "./Pages/depthcard/SwiggyCoursePage/SwiggyCoursePage";
+import FssaiLicenseCourse from "./Pages/depthcard/FssaiCoursePage/FssaiCoursePage";
 
 
 
@@ -33,35 +38,50 @@ function App() {
     <div>
       <Routes>
         <Route path="/" element={<Home />} />
-         <Route path="/" element={<HomeWork />} />
-         
-         <Route path="/course/zomato-onboarding" element={<ZomatoCoursePage />} />
-          <Route path="/services/zomato" element={<ZomatoDetails />} />
+        <Route path="/" element={<HomeWork />} />
+        <Route path="/course/zomato-onboarding" element={<ZomatoCoursePage />} />
+        <Route path="/course/swiggy-onboarding" element={<SwiggyOnboardingCourse />} />
+        <Route path="/course/fssai-onboarding" element={<FssaiLicenseCourse />} />
+        <Route path="/services/zomato" element={<ZomatoDetails />} />
         <Route path="/services/swiggy" element={<SwiggyDetails />} />
         <Route path="/services/fssai" element={<FssaiDetails />} />
-          <Route path="/services" element={<Work />} />
-            <Route path="/login" element={<Login />} />
+        <Route path="/services" element={<Work />} />
+        <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<Signup />} />
         <Route path="/forgot-password" element={<ForgotPassword />} />
         <Route path="/reset-password/:token" element={<ResetPassword />} />
-
+        <Route path="/profile" element={<Profile />} />
         <Route path="/return-policy" element={<ReturnPolicy />} />
         <Route path="/shipping-policy" element={<ShippingPolicy />} />
         <Route path="/privacy-policy" element={<PrivacyPolicies />} />
         <Route path="/terms-and-condition" element={<Terms />} />
         <Route path="/login-phone" element={<PhoneOTPLogin />} />
-
-        {/* <Route path="/checkout/:id" element={<Checkout />} />  */}
-
-
         <Route
-  path="/checkout/:id"
-  element={
-    <ProtectedRoute allowedRoles={['user']}>
-     <Checkout />
-    </ProtectedRoute>
-  }
-/> 
+          path="/SellerDashboard"
+          element={
+            <ProtectedRoute allowedRoles={['seller', 'admin']}>
+              <SellerDashboard />
+            </ProtectedRoute>
+          }
+        />
+        {/* <Route path="/dashboard" element={<UserDashboard />} /> */}
+        {/* <Route path="/checkout/:id" element={<Checkout />} />  */}
+        <Route
+          path="/checkout/:id"
+          element={
+            <ProtectedRoute allowedRoles={['user']}>
+              <Checkout />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/dashboard"
+          element={
+            <ProtectedRoute allowedRoles={['user']}>
+              <UserDashboard />
+            </ProtectedRoute>
+          }
+        />
       </Routes>
     </div>
   );
