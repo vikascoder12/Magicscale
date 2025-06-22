@@ -81,7 +81,7 @@ import PlanRoutes from "./routes/plan.js";
 import adminRoutes from './routes/adminRoutes.js'
 
  
-
+import subscriptionRoutes from './routes/subscriptionRoutes.js';
 import authRoutes from './routes/authRoutes.js';
 import downloadRoutes from './routes/downloadRoutes.js';
 
@@ -117,7 +117,7 @@ app.use('/api', adminRoutes);
 app.use('/api', downloadRoutes);
 // Routes
 app.use('/api/user', userRoutes);
-
+app.use('/api', subscriptionRoutes);
 
 app.use('/api/auth', authRoutes);
 // app.use('/api/admin', adminRoutes);

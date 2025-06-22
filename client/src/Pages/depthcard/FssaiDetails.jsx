@@ -2,12 +2,15 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 import { FaCertificate } from "react-icons/fa";
 import fssaiImg from "../../assets/fssai.png";
+// import SiteFooter from './CoursePages/FssaiCoursePage/SiteFooter';
 
 const FssaiPage = () => {
   const navigate = useNavigate();
 
   const handleStartFssai = () => {
-    navigate("/course/fssai-onboarding");
+    navigate("/course/fssai-onboarding")
+    
+    5;
   };
 
   return (
@@ -56,6 +59,7 @@ const FssaiPage = () => {
             alt="FSSAI License"
             className="w-full max-w-2xl rounded-3xl shadow-2xl object-contain"
           />
+         
         </div>
       </div>
     </div>

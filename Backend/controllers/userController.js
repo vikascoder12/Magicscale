@@ -103,3 +103,19 @@ export const updateUserProfile = async (req, res) => {
     res.status(500).json({ message: 'Server error while updating profile' });
   }
 };
+
+
+
+
+import Subscription from '../models/Subscription.js';
+
+// Controller to get subscriptions for the logged-in user
+export const getUserSubscriptions = async (req, res) => {
+  try {
+    const subscriptions = await Subscription.find({ userId: req.user.id }).sort({ createdAt: -1 });
+    res.json(subscriptions);
+  } catch (error) {
+    console.error("Error fetching subscriptions:", error);
+    res.status(500).json({ message: "Failed to fetch subscriptions" });
+  }
+};

@@ -24,7 +24,9 @@ import SellerDashboard from './Pages/SellerDashboard/SellerDashboard';
 import Profile from './Pages/UserDashboard/Profile'; 
 import SwiggyOnboardingCourse from "./Pages/depthcard/SwiggyCoursePage/SwiggyCoursePage";
 import FssaiLicenseCourse from "./Pages/depthcard/FssaiCoursePage/FssaiCoursePage";
+import Logout from "./Pages/Logout";
 
+import Subscriptions from './Pages/UserDashboard/Subscriptions'; 
 
 
 
@@ -39,6 +41,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/" element={<HomeWork />} />
+        <Route path="/logout" element={<Logout />} />
         <Route path="/course/zomato-onboarding" element={<ZomatoCoursePage />} />
         <Route path="/course/swiggy-onboarding" element={<SwiggyOnboardingCourse />} />
         <Route path="/course/fssai-onboarding" element={<FssaiLicenseCourse />} />
@@ -56,6 +59,7 @@ function App() {
         <Route path="/privacy-policy" element={<PrivacyPolicies />} />
         <Route path="/terms-and-condition" element={<Terms />} />
         <Route path="/login-phone" element={<PhoneOTPLogin />} />
+        
         <Route
           path="/SellerDashboard"
           element={
@@ -71,6 +75,14 @@ function App() {
           element={
             <ProtectedRoute allowedRoles={['user']}>
               <Checkout />
+            </ProtectedRoute>
+          }
+        />
+          <Route
+          path="/Subscriptions"
+          element={
+            <ProtectedRoute allowedRoles={['user']}>
+              <Subscriptions />
             </ProtectedRoute>
           }
         />
