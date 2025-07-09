@@ -1,15 +1,28 @@
 import React from "react";
 import { Home, ShoppingCart, User, LogOut, Menu, X } from "lucide-react";
 import { NavLink } from "react-router-dom";
+import { KanbanSquare } from "lucide-react"; 
+import TaskBoard from "../SellerDashboard/Board";
+
+
 
 const Sidebar = ({ closeSidebar }) => {
+  // const menuItems = [
+  //   { label: "Home", icon: <Home size={20} />, path: "/" },
+  //   { label: "Orders", icon: <ShoppingCart size={20} />, path: "/orders" },
+  //   { label: "Profile", icon: <User size={20} />, path: "/profile" },
+  //   { label: "Subscriptions", icon: <ShoppingCart size={20} />, path: "/subscriptions" },
+  //   { label: "Logout", icon: <LogOut size={20} />, path: "/logout" },
+  //   { label: "Board", icon: <TaskBoard size={20} />, path: "/task-board" },
+  // ];
   const menuItems = [
-    { label: "Home", icon: <Home size={20} />, path: "/" },
-    { label: "Orders", icon: <ShoppingCart size={20} />, path: "/orders" },
-    { label: "Profile", icon: <User size={20} />, path: "/profile" },
-    { label: "Subscriptions", icon: <ShoppingCart size={20} />, path: "/subscriptions" },
-    { label: "Logout", icon: <LogOut size={20} />, path: "/logout" },
-  ];
+  { label: "Home", icon: <Home size={20} />, path: "/" },
+  { label: "Orders", icon: <ShoppingCart size={20} />, path: "/orders" },
+  { label: "Profile", icon: <User size={20} />, path: "/profile" },
+  { label: "Subscriptions", icon: <ShoppingCart size={20} />, path: "/subscriptions" },
+  { label: "Logout", icon: <LogOut size={20} />, path: "/logout" },
+  { label: "Task Board", icon: <KanbanSquare size={20} />, path: "/task-board" }, // ✅ Fixed
+];
 
   return (
     <div className="w-64 h-full bg-white shadow-lg p-4 flex flex-col">

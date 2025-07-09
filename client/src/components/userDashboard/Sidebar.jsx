@@ -1,5 +1,8 @@
 // ✅ Updated Sidebar with Responsive Icon and Branding
 import React from "react";
+
+
+
 import { Home, ShoppingCart, User, LogOut } from "lucide-react";
 import { NavLink } from "react-router-dom";
 
@@ -10,6 +13,7 @@ const Sidebar = ({ closeSidebar }) => {
     { label: "Profile", icon: <User size={20} />, path: "/profile" },
     { label: "Subscriptions", icon: <ShoppingCart size={20} />, path: "/subscriptions" },
     { label: "Logout", icon: <LogOut size={20} />, path: "/logout" },
+
   ];
 
   return (
