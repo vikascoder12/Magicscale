@@ -1,7 +1,7 @@
 import express from 'express';
 import multer from 'multer';
 import { getUserProfile, updateUserProfile } from '../controllers/userController.js';
-import { verifyToken } from '../middleware/authMiddleware.js';
+// import { verifyToken } from '../middleware/authMiddleware.js';
 import path from 'path';
 
 const router = express.Router();
@@ -37,7 +37,7 @@ const multipleUploads = upload.fields([
 ]);
 
 // Routes
-router.get('/profile', verifyToken, getUserProfile);
+router.get('/profile', getUserProfile);
 
 // router.put('/profile', verifyToken, (req, res, next) => {
 //   multipleUploads(req, res, function (err) {
@@ -49,7 +49,7 @@ router.get('/profile', verifyToken, getUserProfile);
 //     next();
 //   });
 // }, updateUserProfile);
-router.put('/profile', verifyToken, (req, res, next) => {
+router.put('/profile',  (req, res, next) => {
   multipleUploads(req, res, function (err) {
     if (err instanceof multer.MulterError) {
       return res.status(400).json({ message: 'File too large. Max size is 1MB.' });
