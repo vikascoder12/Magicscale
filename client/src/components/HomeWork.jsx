@@ -227,12 +227,12 @@ const HomeServices = () => {
       {/* Show More Button */}
 <div className="text-center mt-6">
   <Link to="/services">
-    <button className="relative inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-blue-600 to-blue-400 text-white font-bold rounded-full shadow-lg hover:scale-105 hover:shadow-xl transition-all duration-300">
+    {/* <button className="relative inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-blue-600 to-blue-400 text-white font-bold rounded-full shadow-lg hover:scale-105 hover:shadow-xl transition-all duration-300">
       Explore All Services
       <span className="inline-block transform transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
         <FaArrowRight />
       </span>
-    </button>
+    </button> */}
   </Link>
 </div>
 

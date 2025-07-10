@@ -461,16 +461,16 @@ const Header = () => {
                 <span className="text-sm font-medium text-gray-800">
                   {user.name} ({user.role})
                 </span>
-                <button
+                {/* <button
                   onClick={handleLogout}
                   className="bg-red-500 text-white text-sm font-medium px-3 py-1 rounded-full hover:bg-red-600"
                 >
                   Logout
-                </button>
+                </button> */}
               </div>
             ) : (
               <>
-                <Link to="/login" className="text-sm text-indigo-600 hover:underline">
+                {/* <Link to="/login" className="text-sm text-indigo-600 hover:underline">
                   Login
                 </Link>
                 <Link
@@ -478,7 +478,7 @@ const Header = () => {
                   className="bg-indigo-600 text-white text-sm font-medium px-4 py-2 rounded-full shadow hover:bg-indigo-700 transition"
                 >
                   Sign Up
-                </Link>
+                </Link> */}
               </>
             )}
           </motion.div>

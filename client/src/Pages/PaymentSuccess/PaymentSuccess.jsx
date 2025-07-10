@@ -87,7 +87,13 @@ const PaymentSuccess = () => {
 
     if (!order_id || !userId) return;
 
-    fetch("https://magicscale-backend.onrender.com/api/cashfree/confirm-payment", {
+    // fetch("https://magicscale-backend.onrender.com/api/cashfree/confirm-payment", {
+    //   method: "POST",
+    //   headers: { "Content-Type": "application/json" },
+    //   body: JSON.stringify({ order_id, userId, plan, duration, amount, email, name }),
+    // })
+
+        fetch("https://magicscale-production.up.railway.app/api/cashfree/confirm-payment", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ order_id, userId, plan, duration, amount, email, name }),

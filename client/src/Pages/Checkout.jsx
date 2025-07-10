@@ -2364,7 +2364,9 @@ import { useParams, useLocation } from "react-router-dom";
 import { FaCheckCircle, FaShoppingCart } from "react-icons/fa";
 import { motion } from "framer-motion";
 
-const API_BASE = import.meta.env.VITE_BACKEND_URL || "https://magicscale-backend.onrender.com";
+//https://magicscale-production.up.railway.app/
+//const API_BASE = import.meta.env.VITE_BACKEND_URL || "https://magicscale-backend.onrender.com";
+const API_BASE = import.meta.env.VITE_BACKEND_URL || "https://magicscale-production.up.railway.app";
 
 const discountMap = { 1: 10, 3: 25, 6: 30, 12: 40 };
 const validCoupons = {
