@@ -251,7 +251,7 @@ dotenv.config();
 const app = express();
 
 // CORS configuration
-const allowedOrigins = ["http://localhost:5173", "https://magicscale.in"];
+const allowedOrigins = ["http://localhost:5173", "https://magicscale.in", "https://www.magicscale.in"];
 app.use(cors({
   origin: function (origin, callback) {
     if (!origin || allowedOrigins.includes(origin)) {
